@@ -1,9 +1,12 @@
 import './App.css';
+import Header from './Containers/Header/Header';
+import InputModal from './Components/InputModal/InputModal';
 
 function App() {
   return (
     <div className="App">
-      <p>Easter App</p>
+      <Header />
+      <InputModal />
     </div>
   );
 }

@@ -1,0 +1,53 @@
+.header {
+  position: relative;
+  padding: 6em 4em;
+  background-image: url('../../assets/img/eggs-small.jpg');
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.header h1 {
+  position: relative;
+  top: -0.6em;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+@media (min-width: 576px) {
+  .header {
+    padding: 8em 4em;
+  }
+
+  .header h1 {
+    font-size: 3.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 10em 4em;
+  }
+
+  .header h1 {
+    font-size: 4.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    background-image: url('../../assets/img/eggs-big.jpg');
+  }
+}

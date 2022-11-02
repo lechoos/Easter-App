@@ -22,16 +22,19 @@ const InputModal = props => {
 
   return (
     <div className={styles.modal}>
-      <h2>Podaj rok</h2>
-      <input
-        ref={inputRef}
-        value={year}
-        onChange={e => setYear(parseInt(e.target.value))}
-        onKeyDown={onKeyDownHandler}
-        type='number'
-        placeholder='Rok...'
-      />
-      <button onClick={calculate}>Oblicz</button>
+      <div className={styles.modalItems}>
+        <h2>Podaj rok</h2>
+        <input
+          ref={inputRef}
+          value={year}
+          onChange={e => setYear(parseInt(e.target.value))}
+          onKeyDown={onKeyDownHandler}
+          type='number'
+          placeholder='Rok...'
+          className={styles.input}
+        />
+        <button className={styles.button} onClick={calculate}>Oblicz</button>
+      </div>
     </div>
   )
 }

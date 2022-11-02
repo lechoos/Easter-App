@@ -1,6 +1,52 @@
+:root {
+  --main-color: #5dac5d;
+  --focus-color: #098509;
+}
+
 .modal {
   display: inline-block;
-  padding: 1em 2em;
-  background-color: #d3cfcf;
+  padding: 3em 6em;
+  background-color: #00000094;
   border-radius: 8px;
+}
+
+.modalItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalItems h2,
+.input,
+.button {
+  color: #fff;
+}
+
+.modalItems h2 {
+  text-align: center;
+}
+
+.input {
+  margin: 1.5em 0;
+  padding: 0.5em;
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  border-radius: 16px;
+  outline-color: var(--focus-color);
+}
+
+.button {
+  padding: 1em 2em;
+  width: 60%;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.button:hover, 
+.button:focus {
+  background-color: var(--focus-color);
 }

@@ -2,35 +2,50 @@
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  padding: 2em;
-  width: 500px;
+  margin: 1.5em 0;
+  padding: 3em 5em;
   border-radius: 36px;
 }
 
 .heading {
   grid-row: 1/2;
-  grid-column: 1/2;
-  font-size: 3rem;
+  font-size: 2.1rem;
 }
 
 .link {
   grid-row: 3/4;
   margin-top: 1em;
   padding: 0.5em 1em;
-  font-size: 1.8rem;
-  color: #fff;
+  font-size: 1.6rem;
   border-radius: 16px;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.link:hover {
+  opacity: 0.75;
 }
 
 .date {
   grid-row: 2/3;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 
-/* BUTTON CLASSES */
+@media (min-width: 576px) {
+  .modal {
+    padding: 3em 6em;
+  }
 
-.easterBtn {
-  background-color: #e2c20a;
+  .heading {
+    font-size: 2.8rem;
+  }
+
+  .link {
+    font-size: 1.8rem;
+  }
+
+  .date {
+    font-size: 3.6rem;
+  }
 }

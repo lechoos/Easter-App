@@ -5,7 +5,8 @@
 
 .modal {
   display: inline-block;
-  padding: 3em 6em;
+  margin-bottom: 3em;
+  padding: 2em 4em;
   background-color: #00000094;
   border-radius: 8px;
 }

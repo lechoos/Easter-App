@@ -40,6 +40,7 @@
 .button {
   padding: 1em 2em;
   width: 60%;
+  font-size: 1.4rem;
   background-color: var(--main-color);
   border: none;
   border-radius: 16px;
@@ -54,11 +55,20 @@
 }
 
 @media (min-width: 576px) {
+  .modal {
+    padding: 3em 6em;
+  }
+
   .modalItems h2 {
     font-size: 2rem;
   }
 
   .input {
     padding: 1em;
+    font-size: 1.6rem;
+  }
+
+  .button {
+    font-size: 1.6rem;
   }
 }

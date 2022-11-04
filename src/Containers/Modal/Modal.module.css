@@ -34,11 +34,11 @@
 
 @media (min-width: 576px) {
   .modal {
-    padding: 3em 6em;
+    padding: 2em 4em;
   }
 
   .heading {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 
   .link {

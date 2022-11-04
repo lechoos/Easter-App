@@ -30,6 +30,7 @@
 .input {
   margin: 1.5em 0;
   padding: 0.5em;
+  font-size: 1.4rem;
   background-color: transparent;
   border: 1px solid var(--main-color);
   border-radius: 16px;
@@ -50,4 +51,14 @@
 .button:hover, 
 .button:focus {
   background-color: var(--focus-color);
+}
+
+@media (min-width: 576px) {
+  .modalItems h2 {
+    font-size: 2rem;
+  }
+
+  .input {
+    padding: 1em;
+  }
 }

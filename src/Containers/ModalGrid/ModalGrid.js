@@ -1,3 +1,4 @@
+import withClass from '../../hoc/withClass';
 import styles from './ModalGrid.module.css';
 
 const ModalGrid = props => {
@@ -19,4 +20,4 @@ const ModalGrid = props => {
   )
 }
 
-export default ModalGrid;
+export default withClass(ModalGrid, 'wrapper');

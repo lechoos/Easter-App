@@ -45,7 +45,7 @@ function App() {
 		/>
 	);
 
-	const header = <Header />;
+	const header = <Header title='Easter App' />;
 	const content = (
 		<>
 			<InputModal />

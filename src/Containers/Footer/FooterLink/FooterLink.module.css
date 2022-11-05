@@ -1,3 +1,51 @@
 .icon {
-  font-size: 1.4rem;
+  margin: 0 0.3em;
+  padding: 0.5em;
+  font-size: 2.3rem;
+  transition: color 0.3s;
+  /* background-color: red; */
+}
+
+a[dataid = 'facebook'] {
+  color: #4267B2;
+}
+
+a[dataid = 'facebook']:hover {
+  color: #6886da;
+}
+
+a[dataid = 'spotify'] {
+  color: #1db954;
+}
+
+a[dataid = 'spotify']:hover {
+  color: #44da79;
+}
+
+a[dataid = 'linkedin'] {
+  color: #0e76a8;
+}
+
+a[dataid = 'linkedin']:hover {
+  color: #4ea6cf;
+}
+
+a[dataid = 'github'] {
+  color: #bd2c00;
+}
+
+a[dataid = 'github']:hover {
+  color: #da753b;
+}
+
+@media (min-width: 576px) {
+  .icon {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .icon {
+    font-size: 3.4rem;
+  }
 }

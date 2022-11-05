@@ -37,6 +37,17 @@
   transform-origin: bottom;
 }
 
+.footerItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerLinks {
+  display: flex;
+  margin-top: 1em;
+}
+
 @media (min-width: 576px) {
   .footer {
     padding: 3em 6em;
@@ -44,6 +55,10 @@
 
   .footer p {
     font-size: 1.8rem;
+  }
+
+  .footerLinks {
+    margin-top: 1.5em;
   }
 }
 

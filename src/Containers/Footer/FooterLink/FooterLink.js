@@ -1,10 +1,9 @@
 import styles from './FooterLink.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 const FooterLink = (props) => {
 	return (
-		<a href={props.link}><FontAwesomeIcon className={styles.icon} icon={props.linkIcon} /></a>
+		<a target='_blank' rel='noopener' dataid={props.dataId} href={props.link}><FontAwesomeIcon className={styles.icon} icon={props.linkIcon} /></a>
 	);
 };
 

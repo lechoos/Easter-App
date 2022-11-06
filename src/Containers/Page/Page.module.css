@@ -1,0 +1,24 @@
+:root {
+  --bg-color: #00000066;
+}
+
+.header {
+  font-size: 2.8rem;
+  color: #fff;
+  background-color: var(--bg-color);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.sentences {
+  padding: 0.2em 0.4em;
+  background-color: var(--bg-color);
+  border-radius: 16px;
+}
+
+.sentence {
+  margin: 1em 0;
+  font-size: 1.4rem;
+  color: #fff;
+  text-align: center;
+}

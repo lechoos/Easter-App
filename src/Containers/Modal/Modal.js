@@ -21,6 +21,9 @@ const Modal = props => {
       break;
     case 4:
       month = 'kwietnia'
+      break;
+    default:
+      throw new Error('Nie podano miesiąca')
   }
 
   return (

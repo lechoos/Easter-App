@@ -3,7 +3,7 @@ import styles from './InputModal.module.css';
 import { calculateDate, date } from '../../easterDate';
 import ReducerContext from '../../context/reducerContext';
 
-const InputModal = props => {
+const InputModal = () => {
   
   const { state, dispatch } = useContext(ReducerContext)
 

@@ -3,11 +3,10 @@ import InputModal from "../../InputModal/InputModal";
 import Modal from "../../../Containers/Modal/Modal";
 import ModalGrid from "../../../Containers/ModalGrid/ModalGrid";
 import ReducerContext from "../../../context/reducerContext";
+import Headline from "../../../Containers/Headline/Headline";
 
 const Home = () => {
 	let thursdayDay, fridayDay, eveDay;
-
-  const stan = true;
 
 	const { state } = useContext(ReducerContext)
 
@@ -92,14 +91,13 @@ const Home = () => {
   return (
     <>
 			<InputModal />
-			{stan 
-        ? <ModalGrid
-				    easter={easter}
-				    easterEve={easterEve}
-				    goodFriday={goodFriday}
-				    maundyThursday={maundyThursday}
-			    />  
-        : null}
+			<Headline year={state.year} />
+      <ModalGrid
+				easter={easter}
+				easterEve={easterEve}
+				goodFriday={goodFriday}
+				maundyThursday={maundyThursday}
+			/>  
 		</>
   )
 }

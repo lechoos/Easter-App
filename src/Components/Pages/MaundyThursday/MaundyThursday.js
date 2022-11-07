@@ -1,4 +1,7 @@
 import Page from "../../../Containers/Page/Page";
+import image0 from '../../../assets/img/MaundyThursday/maundy-thursday.jpg'
+import image1 from '../../../assets/img/MaundyThursday/maundy-thursday-1.jpg'
+import image2 from '../../../assets/img/MaundyThursday/maundy-thursday-2.jpg'
 
 const MaundyThursday = props => {
   const firstSentence = 'Wielki Czwartek to wspomnienie ustanowienia Eucharystii i Kapłaństwa.';
@@ -8,7 +11,7 @@ const MaundyThursday = props => {
   return (
     <Page 
       title='Wielki Czwartek'
-      src=''
+      images={[image0, image1, image2]}
       alt=''
       firstSentence={firstSentence}
       secondSentence={secondSentence}

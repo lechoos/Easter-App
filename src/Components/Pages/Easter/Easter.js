@@ -1,4 +1,7 @@
 import Page from "../../../Containers/Page/Page";
+import image0 from '../../../assets/img/Easter/easter.jpg';
+import image1 from '../../../assets/img/Easter/easter-1.jpg';
+import image2 from '../../../assets/img/Easter/easter-2.jpg';
 
 const Easter = props => {
 
@@ -10,11 +13,11 @@ const Easter = props => {
   return (
     <Page 
       title='Wielkanoc'
+      alt='Zdjęcie'
+      images={[image0, image1, image2]}
       firstSentence={firstSentence}
       secondSentence={secondSentence}
       thirdSentence={thirdSentence}
-      src=''
-      alt='Zdjęcie'
     />
   )
 }

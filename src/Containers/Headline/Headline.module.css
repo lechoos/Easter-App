@@ -1,0 +1,27 @@
+.header {
+  display: inline-block;
+  margin-bottom: 1em;
+  padding: 1em 4em;
+  font-size: 2.1rem;
+  color: #fff;
+  background-color: #00000066;
+  border-radius: 16px;
+}
+
+@media (min-width: 576px) {
+  .header {
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 1.5em 4em;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    font-size: 2.7rem;
+  }
+}

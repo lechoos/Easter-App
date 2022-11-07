@@ -62,7 +62,7 @@ const Home = () => {
       id='wielki-piatek'
 			day={fridayDay}
 			month={
-				state.day - 2 === 0 
+				state.day - 2 <= 0 
 					? state.month - 1 
 					: state.month
 			}
@@ -76,7 +76,7 @@ const Home = () => {
       id='wielki-czwartek'
 			day={thursdayDay}
 			month={
-				state.day - 3 === 0 
+				state.day - 3 <= 0 
 					? state.month - 1 
 					: state.month
 			}

@@ -11,7 +11,7 @@ const Footer = (props) => {
 	return (
 		<footer className={styles.footer}>
 			<div className={`${styles.footerItems} wrapper`}>
-				<p>Autor: <a target='_blank' rel='noopener' className={styles.link} href='https://github.com/lechoos'>Piotr Lechowicz</a>
+				<p>Autor: <a target='_blank' rel='noreferrer' className={styles.link} href='https://github.com/lechoos'>Piotr Lechowicz</a>
 				</p>
 				<div className={styles.footerLinks}>
 					<FooterLink 

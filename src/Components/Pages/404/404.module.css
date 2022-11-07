@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4em;
+  width: 100%;
+  color: #fff;
+  background-color: #00000066;
+  border-radius: 16px;
+}
+
+.container h2 {
+  font-size: 3.8rem;
+}
+
+.container p {
+  margin: 1em 0 2em;
+  font-size: 2.5rem;
+}
+
+.link {
+  padding: 1em 2em;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: #46793c;
+  border-radius: 16px;
+  text-decoration: none;
+}

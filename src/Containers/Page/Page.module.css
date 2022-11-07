@@ -1,19 +1,29 @@
 :root {
   --bg-color: #00000066;
+  --radius-value: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
+  padding: 1em 0.5em;
   font-size: 2.8rem;
+  width: 100%;
   color: #fff;
   background-color: var(--bg-color);
-  border-radius: 16px;
+  border-radius: var(--radius-value);
   text-align: center;
 }
 
 .sentences {
-  padding: 0.2em 0.4em;
+  margin: 2em 0;
+  padding: 0.5em 1em;
   background-color: var(--bg-color);
-  border-radius: 16px;
+  border-radius: var(--radius-value);
 }
 
 .sentence {
@@ -21,4 +31,34 @@
   font-size: 1.4rem;
   color: #fff;
   text-align: center;
+}
+
+.link {
+  padding: 1em 2em;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: rgb(66, 143, 42);
+  border-radius: var(--radius-value);
+  text-decoration: none;
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding: 0 1em;
+  }
+
+  .header {
+    font-size: 3.2rem;
+  }
+
+  .sentence,
+  .link {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .sentences {
+    margin: 3em 0;
+  }
 }

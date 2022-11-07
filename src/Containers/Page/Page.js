@@ -4,7 +4,7 @@ import withClass from '../../hoc/withClass';
 
 const Page = props => {
   return (
-    <div>
+    <div className={styles.container}>
       <h2 className={styles.header}>{props.title}</h2>
       <img src={props.src} alt={props.alt} />
       <div className={styles.sentences}>
@@ -12,7 +12,7 @@ const Page = props => {
         <p className={styles.sentence}>{props.secondSentence}</p>
         <p className={styles.sentence}>{props.thirdSentence}</p>
       </div>
-      <Link to='/'>Powrót</Link>
+      <Link className={styles.link} to='/'>Powrót</Link>
     </div>
   )
 }

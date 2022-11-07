@@ -1,12 +1,19 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import styles from './InputModal.module.css';
+import { calculateDate, date } from '../../easterDate';
+import ReducerContext from '../../context/reducerContext';
 
 const InputModal = props => {
-  const [year, setYear] = useState(2022);
+  
+  const { state, dispatch } = useContext(ReducerContext)
+
+  const [year, setYear] = useState(state.year);
   const inputRef = useRef();
   const calculate = () => {
     if (year >= 33 && year < 3000) {
-      console.log(year);
+      calculateDate(parseInt(year))
+      dispatch({ type:'change-date', date })
+      dispatch({ type: 'change-year', year })
     }
   }
 
@@ -27,7 +34,7 @@ const InputModal = props => {
         <input
           ref={inputRef}
           value={year}
-          onChange={e => setYear(parseInt(e.target.value))}
+          onChange={e => setYear(e.target.value)}
           onKeyDown={onKeyDownHandler}
           type='number'
           placeholder='Rok...'

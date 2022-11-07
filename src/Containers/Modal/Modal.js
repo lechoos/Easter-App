@@ -16,10 +16,10 @@ const Modal = props => {
   let month;
 
   switch (props.month) {
-    case '3':
+    case 3:
       month = 'marca'
       break;
-    default:
+    case 4:
       month = 'kwietnia'
   }
 

@@ -1,40 +1,40 @@
-import { useContext } from "react";
-import InputModal from "../../InputModal/InputModal";
-import Modal from "../../../Containers/Modal/Modal";
-import ModalGrid from "../../../Containers/ModalGrid/ModalGrid";
-import ReducerContext from "../../../context/reducerContext";
-import Headline from "../../../Containers/Headline/Headline";
+import { useContext } from 'react';
+import InputModal from '../../InputModal/InputModal';
+import Modal from '../../../Containers/Modal/Modal';
+import ModalGrid from '../../../Containers/ModalGrid/ModalGrid';
+import ReducerContext from '../../../context/reducerContext';
+import Headline from '../../../Containers/Headline/Headline';
 
 const Home = () => {
 	let thursdayDay, fridayDay, eveDay;
 
-	const { state } = useContext(ReducerContext)
+	const { state } = useContext(ReducerContext);
 
 	switch (state.day - 3) {
-		case 0 :
-			thursdayDay = 31
-			fridayDay = state.day - 2
-			eveDay = state.day - 1
+		case 0:
+			thursdayDay = 31;
+			fridayDay = state.day - 2;
+			eveDay = state.day - 1;
 			break;
-		case -1 :
-			thursdayDay = 30
-			fridayDay = 31
-			eveDay = state.day - 1
+		case -1:
+			thursdayDay = 30;
+			fridayDay = 31;
+			eveDay = state.day - 1;
 			break;
-		case -2 :
-			thursdayDay = 29
-			fridayDay = 30
-			eveDay = 31
+		case -2:
+			thursdayDay = 29;
+			fridayDay = 30;
+			eveDay = 31;
 			break;
-		default :
-			thursdayDay = state.day - 3
-			fridayDay = state.day - 2
-			eveDay = state.day - 1
+		default:
+			thursdayDay = state.day - 3;
+			fridayDay = state.day - 2;
+			eveDay = state.day - 1;
 	}
 
-  const easter = (
+	const easter = (
 		<Modal
-      id='wielkanoc'
+			id='wielkanoc'
 			day={state.day}
 			month={state.month}
 			name='Wielkanoc'
@@ -45,13 +45,9 @@ const Home = () => {
 
 	const easterEve = (
 		<Modal
-      id='wielka-sobota'
+			id='wielka-sobota'
 			day={eveDay}
-			month={
-				state.day - 1 === 0 
-					? state.month - 1 
-					: state.month
-			}
+			month={state.day - 1 === 0 ? state.month - 1 : state.month}
 			name='Wielka Sobota'
 			modalBackground='#3e174e'
 			linkBackground='#793096'
@@ -59,13 +55,9 @@ const Home = () => {
 	);
 	const goodFriday = (
 		<Modal
-      id='wielki-piatek'
+			id='wielki-piatek'
 			day={fridayDay}
-			month={
-				state.day - 2 <= 0 
-					? state.month - 1 
-					: state.month
-			}
+			month={state.day - 2 <= 0 ? state.month - 1 : state.month}
 			name='Wielki Piątek'
 			modalBackground='#901717'
 			linkBackground='#c93636'
@@ -73,13 +65,9 @@ const Home = () => {
 	);
 	const maundyThursday = (
 		<Modal
-      id='wielki-czwartek'
+			id='wielki-czwartek'
 			day={thursdayDay}
-			month={
-				state.day - 3 <= 0 
-					? state.month - 1 
-					: state.month
-			}
+			month={state.day - 3 <= 0 ? state.month - 1 : state.month}
 			name='Wielki Czwartek'
 			modalColor='#000'
 			modalBackground='#eeedc1'
@@ -88,18 +76,18 @@ const Home = () => {
 		/>
 	);
 
-  return (
-    <>
+	return (
+		<>
 			<InputModal />
 			<Headline year={state.year} />
-      <ModalGrid
+			<ModalGrid
 				easter={easter}
 				easterEve={easterEve}
 				goodFriday={goodFriday}
 				maundyThursday={maundyThursday}
-			/>  
+			/>
 		</>
-  )
-}
+	);
+};
 
 export default Home;

@@ -41,19 +41,13 @@ function App() {
 	return (
 		<div className='App'>
 			<Router>
-			<ReducerContext.Provider
-						value={{
-							state: state,
-							dispatch: dispatch,
-						}}>
-
-							<Layout
-								header={header}
-								content={content}
-								footer={footer}
-							/>
-
-					</ReducerContext.Provider>
+				<ReducerContext.Provider
+					value={{
+						state: state,
+						dispatch: dispatch,
+					}}>
+					<Layout header={header} content={content} footer={footer} />
+				</ReducerContext.Provider>
 			</Router>
 		</div>
 	);

@@ -12,9 +12,13 @@ const Page = (props) => {
 				alt={props.alt}
 			/>
 			<div className={styles.sentences}>
-				<p className={styles.sentence}>{props.firstSentence}</p>
-				<p className={styles.sentence}>{props.secondSentence}</p>
-				<p className={styles.sentence}>{props.thirdSentence}</p>
+				{props.sentences.map(sentence => (
+					<p className={styles.sentence}>{sentence}</p>
+				))}
+				<p className={styles.sentence}>{props.lastSentence}</p>
+				
+				{/* <p className={styles.sentence}>{props.firstSentence}</p>
+				<p className={styles.sentence}>{props.secondSentence}</p> */}
 			</div>
 			<Link className={styles.link} to='/'>
 				Powrót

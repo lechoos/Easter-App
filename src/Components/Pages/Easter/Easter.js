@@ -4,19 +4,19 @@ import image1 from '../../../assets/img/Easter/easter-1.jpg';
 import image2 from '../../../assets/img/Easter/easter-2.jpg';
 
 const Easter = (props) => {
-	const firstSentence = 'Wielkanoc to najważniejsze święto chrześcijańskie.';
-	const secondSentence =
-		'W tym dniu wspominane jest zmartwychwstanie Chrystusa.';
-	const thirdSentence = `W 2022 Wielkanoc wypada 17 kwietnia.`;
+	const sentences = [
+		'Wielkanoc to najważniejsze święto chrześcijańskie.',
+		'W tym dniu wspominane jest zmartwychwstanie Chrystusa.'
+	];
+	const lastSentence = `W 2022 Wielkanoc wypada 17 kwietnia.`;
 
 	return (
 		<Page
 			title='Wielkanoc'
-			alt='Zdjęcie'
+			alt='Zdjęcie z Wielkiej Nocy'
 			images={[image0, image1, image2]}
-			firstSentence={firstSentence}
-			secondSentence={secondSentence}
-			thirdSentence={thirdSentence}
+			sentences={sentences}
+			lastSentence={lastSentence}
 		/>
 	);
 };

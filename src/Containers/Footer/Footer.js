@@ -12,7 +12,7 @@ const Footer = (props) => {
 		<footer className={styles.footer}>
 			<div className={`${styles.footerItems} wrapper`}>
 				<p>
-					Autor:
+					Autor: &nbsp;
 					<a
 						target='_blank'
 						rel='noreferrer'

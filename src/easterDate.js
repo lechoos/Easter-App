@@ -22,5 +22,9 @@ export const calculateDate = (givenYear) => {
 	p = (h + l - 7 * m + 114) % 31;
 	month = Math.floor((h + l - 7 * m + 114) / 31);
 
-	return (date.year = givenYear), (date.month = month), (date.day = p + 1);
+	return (
+		date.year = givenYear,
+		date.month = month,
+		date.day = p + 1
+	)
 };

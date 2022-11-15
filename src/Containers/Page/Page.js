@@ -16,9 +16,6 @@ const Page = (props) => {
 					<p className={styles.sentence}>{sentence}</p>
 				))}
 				<p className={styles.sentence}>{props.lastSentence}</p>
-				
-				{/* <p className={styles.sentence}>{props.firstSentence}</p>
-				<p className={styles.sentence}>{props.secondSentence}</p> */}
 			</div>
 			<Link className={styles.link} to='/'>
 				Powrót

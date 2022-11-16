@@ -5,14 +5,19 @@ import ReducerContext from '../../context/reducerContext';
 
 const InputModal = () => {
 	const { state, dispatch } = useContext(ReducerContext);
-
 	const [year, setYear] = useState(state.year);
+	const [error, setError] = useState();
+
 	const inputRef = useRef();
 	const calculate = () => {
 		if (year >= 33 && year < 3000) {
 			calculateDate(parseInt(year));
 			dispatch({ type: 'change-date', date });
 			dispatch({ type: 'change-year', year });
+		} else if(year < 33) {
+			setError('Rok musi być większy od 32!')
+		} else if (year >= 3000) {
+			setError('Rok musi być mniejszy od 3000!')
 		}
 	};
 
@@ -21,6 +26,13 @@ const InputModal = () => {
 			calculate();
 		}
 	};
+
+	const onChangeHandler = (e) => {
+		if (year === '' && e.target.value === '0') {
+			return;
+		}
+		setYear(e.target.value)
+	}
 
 	useEffect(() => {
 		inputRef.current.focus();
@@ -33,12 +45,13 @@ const InputModal = () => {
 				<input
 					ref={inputRef}
 					value={year}
-					onChange={(e) => setYear(e.target.value)}
+					onChange={onChangeHandler}
 					onKeyDown={onKeyDownHandler}
 					type='number'
 					placeholder='Rok...'
 					className={styles.input}
 				/>
+				{error ? <p className={styles.error}>{error}</p> : null}
 				<button className={styles.button} onClick={calculate}>
 					Oblicz
 				</button>

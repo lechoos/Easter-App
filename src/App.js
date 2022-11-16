@@ -8,6 +8,7 @@ import Home from './Components/Pages/Home/Home';
 import NotFound from './Components/Pages/404/404';
 import { initialState, reducer } from './reducer';
 import ReducerContext from './context/reducerContext';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const Easter = lazy(() => import('./Components/Pages/Easter/Easter.js'));
 const EasterEve = lazy(() =>
@@ -25,7 +26,7 @@ function App() {
 
 	const header = <Header />;
 	const content = (
-		<Suspense fallback='Ładowanie...'>
+		<Suspense fallback={<ClipLoader color={'#fff'} />}>
 			<Routes>
 				<Route end path='/' element={<Home />} />
 				<Route path='wielkanoc' element={<Easter />} />

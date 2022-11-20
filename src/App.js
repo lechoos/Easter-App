@@ -1,6 +1,5 @@
 import { useReducer, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
 import Header from './Containers/Header/Header';
 import Footer from './Containers/Footer/Footer';
 import Layout from './Containers/Layout/Layout';
@@ -26,30 +25,30 @@ function App() {
 
 	const header = <Header />;
 	const content = (
-		<Suspense fallback={<ClipLoader color={'#fff'} />}>
-			<Routes>
-				<Route end path='/' element={<Home />} />
-				<Route path='wielkanoc' element={<Easter />} />
-				<Route path='wielka-sobota' element={<EasterEve />} />
-				<Route path='wielki-piatek' element={<GoodFriday />} />
-				<Route path='wielki-czwartek' element={<MaundyThursday />} />
-				<Route path='*' element={<NotFound />} />
-			</Routes>
-		</Suspense>
+		<Router>
+			<Suspense fallback={<ClipLoader color={'#fff'} />}>
+				<Routes>
+					<Route end path='/' element={<Home />} />
+					<Route path='wielkanoc' element={<Easter />} />
+					<Route path='wielka-sobota' element={<EasterEve />} />
+					<Route path='wielki-piatek' element={<GoodFriday />} />
+					<Route path='wielki-czwartek' element={<MaundyThursday />} />
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+			</Suspense>
+		</Router>
 	);
 	const footer = <Footer />;
 
 	return (
-		<div className='App'>
-			<Router>
-				<ReducerContext.Provider
-					value={{
-						state: state,
-						dispatch: dispatch,
-					}}>
-					<Layout header={header} content={content} footer={footer} />
-				</ReducerContext.Provider>
-			</Router>
+		<div>
+			<ReducerContext.Provider
+				value={{
+					state: state,
+					dispatch: dispatch,
+				}}>
+				<Layout header={header} content={content} footer={footer} />
+			</ReducerContext.Provider>
 		</div>
 	);
 }

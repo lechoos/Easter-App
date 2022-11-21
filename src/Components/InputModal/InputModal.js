@@ -10,28 +10,36 @@ const InputModal = () => {
 
 	const inputRef = useRef();
 	const calculate = () => {
-		if (year >= 33 && year < 3000) {
+		if (year >= 33 && year <= 2999) {
 			calculateDate(parseInt(year));
 			dispatch({ type: 'change-date', date });
 			dispatch({ type: 'change-year', year });
-		} else if(year < 33) {
-			setError('Rok musi być większy od 32!')
-		} else if (year >= 3000) {
-			setError('Rok musi być mniejszy od 3000!')
+			setError('');
+		} else if (year === ''){
+			setError('Musisz podać rok!');
+		} else if (year < 33) {
+			setError('Rok musi być większy od 32!');
+		} else if (year > 2999) {
+			setError('Rok musi być mniejszy od 3000!');
 		}
 	};
 
 	const onKeyDownHandler = (e) => {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' && year >= 1) {
 			calculate();
 		}
 	};
 
 	const onChangeHandler = (e) => {
-		if (year === '' && e.target.value === '0') {
-			return;
-		}
-		setYear(e.target.value)
+		if (!year && e.target.value === '0') return;
+
+		if (e.target.value < 0) {
+			setError('Rok nie może być mniejszy niż 0!');
+		} else {
+			setError('');
+		};
+
+		setYear(e.target.value);
 	}
 
 	useEffect(() => {

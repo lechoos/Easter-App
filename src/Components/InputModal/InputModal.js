@@ -3,7 +3,7 @@ import styles from './InputModal.module.css';
 import { calculateDate, date } from '../../easterDate';
 import ReducerContext from '../../context/reducerContext';
 
-const InputModal = () => {
+const InputModal = (props) => {
 	const { state, dispatch } = useContext(ReducerContext);
 	const [year, setYear] = useState(state.year);
 	const [error, setError] = useState();
@@ -15,6 +15,7 @@ const InputModal = () => {
 			dispatch({ type: 'change-date', date });
 			dispatch({ type: 'change-year', year });
 			setError('');
+			props.scrollHandler();
 		} else if (year === ''){
 			setError('Musisz podać rok!');
 		} else if (year < 33) {

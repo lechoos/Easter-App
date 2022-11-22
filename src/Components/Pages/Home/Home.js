@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import InputModal from '../../InputModal/InputModal';
 import Modal from '../../../Containers/Modal/Modal';
 import ModalGrid from '../../../Containers/ModalGrid/ModalGrid';
@@ -9,6 +9,9 @@ const Home = () => {
 	let thursdayDay, fridayDay, eveDay;
 
 	const { state } = useContext(ReducerContext);
+	const gridRef = useRef();
+
+	const scrollToGrid = () => window.scrollTo({ behavior: 'smooth', top: gridRef.current.offsetTop })
 
 	switch (state.day - 3) {
 		case 0:
@@ -78,9 +81,12 @@ const Home = () => {
 
 	return (
 		<>
-			<InputModal />
+			<InputModal
+				scrollHandler={scrollToGrid}
+			/>
 			<Headline year={state.year} />
 			<ModalGrid
+				innerRef={gridRef}
 				easter={easter}
 				easterEve={easterEve}
 				goodFriday={goodFriday}

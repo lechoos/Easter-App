@@ -16,12 +16,26 @@ const GoodFriday = () => {
 
 	const month = monthNumber === 4 ? 'kwietnia' : 'marca';
 
+	let dayNumber;
+
+	switch (state.day - 2) {
+		case 0 :
+			dayNumber = 31;
+			break;
+		case -1 :
+			dayNumber = 30;
+			break;
+		default :
+			dayNumber = state.day;
+	}
+
 	const sentences = [
 		'Wielki Piątek to dzień smutku, postu, w którym szczególnie czci się krzyż.',
 		'Wielki Piątek jest dniem śmierci Jezusa na krzyżu. W tym dniu nie sprawuje się Mszy Świętej, a jedynie żałobną Liturgię Męki Pańskiej.',
+		'W tym dniu obowiązuje post ścisły.'
 	];
 
-	const lastSentence = `W ${state.year} roku Wielki Piątek wypada ${state.day - 2} ${month}.`;
+	const lastSentence = `W ${state.year} roku Wielki Piątek wypada ${dayNumber} ${month}.`;
 
 	return (
 		<Page

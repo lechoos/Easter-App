@@ -14,13 +14,19 @@ const EasterEve = () => {
 			: state.month
 	);
 
+	const dayNumber = (
+		state.day - 1 === 0 
+			? 31 
+			: state.day
+	)
+
 	const month = monthNumber === 4 ? 'kwietnia' : 'marca';
 
 	const sentences = [
 		'Wielka Sobota to dzień zadumy, żałoby po śmierci Jezusa.',
 		'W tym dniu święci się pokarmy, ale nie odprawia się Mszy Świętej.',
 	];
-	const lastSentence = `W ${state.year} Wielka Sobota wypada ${state.day - 1} ${month}.`;
+	const lastSentence = `W ${state.year} Wielka Sobota wypada ${dayNumber} ${month}.`;
 
 	return (
 		<Page

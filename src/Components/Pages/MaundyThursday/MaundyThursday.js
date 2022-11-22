@@ -5,7 +5,7 @@ import image0 from '../../../assets/img/MaundyThursday/maundy-thursday.jpg';
 import image1 from '../../../assets/img/MaundyThursday/maundy-thursday-1.jpg';
 import image2 from '../../../assets/img/MaundyThursday/maundy-thursday-2.jpg';
 
-const MaundyThursday = (props) => {
+const MaundyThursday = () => {
 	const { state } = useContext(ReducerContext);
 
 	const monthNumber = (
@@ -16,11 +16,27 @@ const MaundyThursday = (props) => {
 
 	const month = monthNumber === 4 ? 'kwietnia' : 'marca';
 
+	let dayNumber;
+
+	switch (state.day - 3) {
+		case 0 :
+			dayNumber = 31;
+			break;
+		case -1 :
+			dayNumber = 30;
+			break;
+		case -2 :
+			dayNumber = 29;
+			break;
+		default :
+			dayNumber = state.day;
+	}
+
 	const sentences = [
 		'Wielki Czwartek to wspomnienie ustanowienia Eucharystii i Kapłaństwa.',
 		'Tego dnia Jezus spożył Ostatnią Wieczerzę ze swoimi uczniami. Tego dnia rano sprawuje się Mszę Krzyżma w kościołach katedralnych, zaś wieczorem Mszę Wieczerzy Pańskiej.'
 	];
-	const lastSentence = `W ${state.year} roku Wielki Czwartek wypada ${state.day - 3} ${month}.`;
+	const lastSentence = `W ${state.year} roku Wielki Czwartek wypada ${dayNumber} ${month}.`;
 
 	return (
 		<Page

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import ReducerContext from '../../../context/reducerContext';
 import Page from '../../../Containers/Page/Page';
 import image0 from '../../../assets/img/EasterEve/easter-eve.jpg';
@@ -6,6 +7,7 @@ import image1 from '../../../assets/img/EasterEve/easter-eve-1.jpg';
 import image2 from '../../../assets/img/EasterEve/easter-eve-2.jpg';
 
 const EasterEve = () => {
+	useWebsiteTitle('Easter App - Wielka Sobota');
 	const { state } = useContext(ReducerContext);
 
 	const monthNumber = (
@@ -17,7 +19,7 @@ const EasterEve = () => {
 	const dayNumber = (
 		state.day - 1 === 0 
 			? 31 
-			: state.day
+			: state.day - 1
 	)
 
 	const month = monthNumber === 4 ? 'kwietnia' : 'marca';

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import ReducerContext from '../../../context/reducerContext';
 import Page from '../../../Containers/Page/Page';
 import image0 from '../../../assets/img/GoodFriday/good-friday.jpg';
@@ -6,6 +7,7 @@ import image1 from '../../../assets/img/GoodFriday/good-friday-1.jpg';
 import image2 from '../../../assets/img/GoodFriday/good-friday-2.jpg';
 
 const GoodFriday = () => {
+	useWebsiteTitle('Easter App - Wielki Piątek');
 	const { state } = useContext(ReducerContext);
 
 	const monthNumber = (
@@ -26,7 +28,7 @@ const GoodFriday = () => {
 			dayNumber = 30;
 			break;
 		default :
-			dayNumber = state.day;
+			dayNumber = state.day - 2;
 	}
 
 	const sentences = [

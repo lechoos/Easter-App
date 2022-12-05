@@ -1,15 +1,17 @@
+const currentYear = new Date().getFullYear();
+
 export const date = {
-	year: 2022,
-	month: 4,
-	day: 17,
+	year: parseInt(currentYear),
+	month: null,
+	day: null,
 };
 
 export const calculateDate = (givenYear) => {
 	let a, b, c, d, e, f, g, h, i, k, l, m, p, month;
 
-	a = givenYear % 19;
-	b = Math.floor(givenYear / 100);
-	c = givenYear % 100;
+	a = parseInt(givenYear) % 19;
+	b = Math.floor(parseInt(givenYear) / 100);
+	c = parseInt(givenYear) % 100;
 	d = Math.floor(b / 4);
 	e = b % 4;
 	f = Math.floor((b + 8) / 25);
@@ -28,3 +30,5 @@ export const calculateDate = (givenYear) => {
 		date.day = p + 1
 	)
 };
+
+calculateDate(currentYear);

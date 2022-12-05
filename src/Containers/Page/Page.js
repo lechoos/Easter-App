@@ -13,7 +13,7 @@ const Page = (props) => {
 			/>
 			<div className={styles.sentences}>
 				{props.sentences.map(sentence => (
-					<p className={styles.sentence}>{sentence}</p>
+					<p key={props.sentences.indexOf(sentence)} className={styles.sentence}>{sentence}</p>
 				))}
 				<p className={styles.sentence}>{props.lastSentence}</p>
 			</div>

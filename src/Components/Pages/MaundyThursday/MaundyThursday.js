@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import ReducerContext from '../../../context/reducerContext';
 import Page from '../../../Containers/Page/Page';
 import image0 from '../../../assets/img/MaundyThursday/maundy-thursday.jpg';
@@ -6,6 +7,7 @@ import image1 from '../../../assets/img/MaundyThursday/maundy-thursday-1.jpg';
 import image2 from '../../../assets/img/MaundyThursday/maundy-thursday-2.jpg';
 
 const MaundyThursday = () => {
+	useWebsiteTitle('Easter App - Wielki Czwartek');
 	const { state } = useContext(ReducerContext);
 
 	const monthNumber = (
@@ -29,7 +31,7 @@ const MaundyThursday = () => {
 			dayNumber = 29;
 			break;
 		default :
-			dayNumber = state.day;
+			dayNumber = state.day - 3;
 	}
 
 	const sentences = [

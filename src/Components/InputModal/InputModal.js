@@ -11,10 +11,11 @@ const InputModal = (props) => {
 	const inputRef = useRef();
 	const calculate = () => {
 		if (year >= 33 && year <= 2999) {
-			calculateDate(parseInt(year));
+			calculateDate(year);
 			dispatch({ type: 'change-date', date });
 			dispatch({ type: 'change-year', year });
 			setError('');
+			inputRef.current.blur();
 			props.scrollHandler();
 		} else if (year === ''){
 			setError('Musisz podać rok!');
@@ -36,6 +37,7 @@ const InputModal = (props) => {
 
 		if (e.target.value < 0) {
 			setError('Rok nie może być mniejszy niż 0!');
+			return;
 		} else {
 			setError('');
 		};

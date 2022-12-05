@@ -1,11 +1,13 @@
 import { useContext } from 'react';
+import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 import ReducerContext from '../../../context/reducerContext';
 import Page from '../../../Containers/Page/Page';
 import image0 from '../../../assets/img/Easter/easter.jpg';
 import image1 from '../../../assets/img/Easter/easter-1.jpg';
 import image2 from '../../../assets/img/Easter/easter-2.jpg';
 
-const Easter = (props) => {
+const Easter = () => {
+	useWebsiteTitle('Easter App - Wielkanoc');
 	const { state } = useContext(ReducerContext);
 
 	const month = state.month === 4 ? 'kwietnia' : 'marca'

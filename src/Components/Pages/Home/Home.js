@@ -4,8 +4,11 @@ import Modal from '../../../Containers/Modal/Modal';
 import ModalGrid from '../../../Containers/ModalGrid/ModalGrid';
 import ReducerContext from '../../../context/reducerContext';
 import Headline from '../../../Containers/Headline/Headline';
+import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
 
 const Home = () => {
+	useWebsiteTitle('Easter App - Strona Główna')
+
 	let thursdayDay, fridayDay, eveDay;
 
 	const { state } = useContext(ReducerContext);

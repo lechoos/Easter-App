@@ -1,10 +1,10 @@
 import { useContext, useRef } from 'react';
-import InputModal from '../../InputModal/InputModal';
-import Modal from '../../../Containers/Modal/Modal';
-import ModalGrid from '../../../Containers/ModalGrid/ModalGrid';
-import ReducerContext from '../../../context/reducerContext';
-import Headline from '../../../Containers/Headline/Headline';
-import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
+import InputModal from '../../Components/InputModal/InputModal';
+import Modal from '../../Components/Modal/Modal';
+import ModalGrid from '../../Components/ModalGrid/ModalGrid';
+import ReducerContext from '../../context/reducerContext';
+import Headline from '../../Components/Headline/Headline';
+import useWebsiteTitle from '../../hooks/useWebsiteTitle';
 
 const Home = () => {
 	useWebsiteTitle('Easter App - Strona Główna')

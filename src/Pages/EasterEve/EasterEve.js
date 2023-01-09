@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import useWebsiteTitle from '../../../hooks/useWebsiteTitle';
-import ReducerContext from '../../../context/reducerContext';
-import Page from '../../../Containers/Page/Page';
-import image0 from '../../../assets/img/EasterEve/easter-eve.jpg';
-import image1 from '../../../assets/img/EasterEve/easter-eve-1.jpg';
-import image2 from '../../../assets/img/EasterEve/easter-eve-2.jpg';
+import useWebsiteTitle from '../../hooks/useWebsiteTitle';
+import ReducerContext from '../../context/reducerContext';
+import Page from '../../Components/Page/Page';
+import image0 from '../../assets/img/EasterEve/easter-eve.jpg';
+import image1 from '../../assets/img/EasterEve/easter-eve-1.jpg';
+import image2 from '../../assets/img/EasterEve/easter-eve-2.jpg';
 
 const EasterEve = () => {
 	useWebsiteTitle('Easter App - Wielka Sobota');
@@ -27,8 +27,9 @@ const EasterEve = () => {
 	const sentences = [
 		'Wielka Sobota to dzień zadumy, żałoby po śmierci Jezusa.',
 		'W tym dniu święci się pokarmy, ale nie odprawia się Mszy Świętej.',
+		'Po zmroku sprawowana jest najważniejsza Liturgia w ciągu roku - Liturgia Wigilii Paschalnej, lecz należy ona już do uroczystości Zmartwychwstania Pańskiego.',
+		`W ${state.year} Wielka Sobota wypada ${dayNumber} ${month}.`
 	];
-	const lastSentence = `W ${state.year} Wielka Sobota wypada ${dayNumber} ${month}.`;
 
 	return (
 		<Page
@@ -36,7 +37,6 @@ const EasterEve = () => {
 			images={[image0, image1, image2]}
 			alt='Zdjęcie z Wielkiej Soboty'
 			sentences={sentences}
-			lastSentence={lastSentence}
 		/>
 	);
 };
